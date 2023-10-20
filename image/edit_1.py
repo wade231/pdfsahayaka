@@ -14,7 +14,7 @@ async def bright(client, message):
         edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "brightness.jpg"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
-                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=True
+                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=False
             )
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
@@ -39,7 +39,7 @@ async def bright(client, message):
         else:
             try:
                 await message.reply_to_message.reply_text(
-                    f"{e} \nSomething went wrong!", quote=True
+                    f"{e} \nSomething went wrong!", quote=False
                 )
             except Exception:
                 return
@@ -54,7 +54,7 @@ async def mix(client, message):
         edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "mix.jpg"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
-                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=True
+                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=False
             )
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
@@ -65,7 +65,7 @@ async def mix(client, message):
             new_image = Image.merge("RGB", (green, red, blue))
             new_image.save(edit_img_loc)
             await message.reply_chat_action(ChatAction.UPLOAD_PHOTO)
-            await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
+            await message.reply_to_message.reply_photo(edit_img_loc, quote=False)
             await msg.delete()
         else:
             await message.reply_text("Why did you delete that??")
@@ -80,7 +80,7 @@ async def mix(client, message):
         else:
             try:
                 await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
+                    "Something went wrong!", quote=False
                 )
             except Exception:
                 return
@@ -95,7 +95,7 @@ async def black_white(client, message):
         edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "black_white.jpg"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
-                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=True
+                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=False
             )
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
@@ -105,7 +105,7 @@ async def black_white(client, message):
             grayImage = cv2.cvtColor(image_file, cv2.COLOR_BGR2GRAY)
             cv2.imwrite(edit_img_loc, grayImage)
             await message.reply_chat_action(ChatAction.UPLOAD_PHOTO)
-            await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
+            await message.reply_to_message.reply_photo(edit_img_loc, quote=False)
             await msg.delete()
         else:
             await message.reply_text("Why did you delete that??")
@@ -120,7 +120,7 @@ async def black_white(client, message):
         else:
             try:
                 await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
+                    "Something went wrong!", quote=False
                 )
             except Exception:
                 return
@@ -135,7 +135,7 @@ async def normal_blur(client, message):
         edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "BlurImage.jpg"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
-                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=True
+                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=False
             )
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
@@ -145,7 +145,7 @@ async def normal_blur(client, message):
             blurImage = OriImage.filter(ImageFilter.BLUR)
             blurImage.save(edit_img_loc)
             await message.reply_chat_action(ChatAction.UPLOAD_PHOTO)
-            await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
+            await message.reply_to_message.reply_photo(edit_img_loc, quote=False)
             await msg.delete()
         else:
             await message.reply_text("Why did you delete that??")
@@ -160,7 +160,7 @@ async def normal_blur(client, message):
         else:
             try:
                 await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
+                    "Something went wrong!", quote=False
                 )
             except Exception:
                 return
@@ -175,7 +175,7 @@ async def g_blur(client, message):
         edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "gaussian_blur.jpg"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
-                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=True
+                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=False
             )
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
@@ -200,7 +200,7 @@ async def g_blur(client, message):
         else:
             try:
                 await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
+                    "Something went wrong!", quote=False
                 )
             except Exception:
                 return
@@ -215,7 +215,7 @@ async def box_blur(client, message):
         edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "box_blur.jpg"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
-                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=True
+                "<b>𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙸𝙼𝙰𝙶𝙴....</b>", quote=False
             )
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
@@ -225,7 +225,7 @@ async def box_blur(client, message):
             im2 = im1.filter(ImageFilter.BoxBlur(0))
             im2.save(edit_img_loc)
             await message.reply_chat_action(ChatAction.UPLOAD_PHOTO)
-            await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
+            await message.reply_to_message.reply_photo(edit_img_loc, quote=False)
             await msg.delete()
         else:
             await message.reply_text("Why did you delete that??")
